@@ -11,8 +11,9 @@ metadata:
   annotations:
     # ArgoCD apps from this template used tssc-gitops as the grouping
     argocd/app-selector: tssc/gitops=rodan-demo-v5
-    backstage.io/kubernetes-id: rodan-demo-v5 
-    backstage.io/techdocs-ref: dir:. 
+    backstage.io/kubernetes-id: rodan-demo-v5
+    backstage.io/kubernetes-namespace: rodan-demo-ci
+    backstage.io/techdocs-ref: dir:.
     janus-idp.io/tekton: rodan-demo-v5
     quay.io/repository-slug: deanpeterson/rodan-demo-v5
   tags: ["python", "pip", "flask", "sscs", "sbom", "acs"] 

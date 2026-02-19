@@ -21,7 +21,7 @@ metadata:
     argocd/app-name: rodan-demo-v5
     janus-idp.io/tekton: rodan-demo-v5
     backstage.io/kubernetes-id: rodan-demo-v5
-    backstage.io/kubernetes-namespace: rodan-demo
+    backstage.io/kubernetes-namespace: rodan-demo-ci
     app.kubernetes.io/part-of: rodan-demo-v5
 spec:
   params:
