@@ -169,19 +169,21 @@ spec:
     imagePullPolicy: Always
   - name: upload-sbom
     image: quay.io/redhat-appstudio/rhtap-task-runner:latest
-    command:
-    - cosign
-    args:
-    - attach
-    - sbom
-    - --sbom
-    - sbom-cyclonedx.json
-    - --type
-    - cyclonedx
-    - $(params.IMAGE)
+    script: |
+      mkdir -p /tmp/docker-config
+      cp /auth/.dockerconfigjson /tmp/docker-config/config.json
+      export DOCKER_CONFIG=/tmp/docker-config
+      cosign attach sbom \
+        --sbom sbom-cyclonedx.json \
+        --type cyclonedx \
+        --allow-insecure-registry \
+        "$IMAGE"
     volumeMounts:
     - mountPath: /tmp/files
       name: tmpfiles
+    - mountPath: /auth
+      name: registry-auth
+      readOnly: true
     workingDir: /tmp/files
     imagePullPolicy: Always
   volumes:
