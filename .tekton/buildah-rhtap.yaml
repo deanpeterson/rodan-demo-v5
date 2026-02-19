@@ -70,6 +70,8 @@ spec:
       value: ''
     - name: BUILDAH_ISOLATION
       value: chroot
+    - name: REGISTRY_AUTH_FILE
+      value: /tekton/home/.docker/config.json
   steps:
   - name: build
     image: quay.io/redhat-appstudio/rhtap-task-runner:latest
