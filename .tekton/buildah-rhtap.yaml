@@ -71,7 +71,7 @@ spec:
     - name: BUILDAH_ISOLATION
       value: chroot
     - name: REGISTRY_AUTH_FILE
-      value: /tekton/home/.docker/config.json
+      value: /auth/.dockerconfigjson
   steps:
   - name: build
     image: quay.io/redhat-appstudio/rhtap-task-runner:latest
@@ -115,6 +115,9 @@ spec:
       name: varlibcontainers
     - mountPath: /tmp/files
       name: tmpfiles
+    - mountPath: /auth
+      name: registry-auth
+      readOnly: true
     workingDir: $(workspaces.source.path)
     imagePullPolicy: Always
   - name: generate-sboms
@@ -186,6 +189,9 @@ spec:
     name: varlibcontainers
   - emptyDir: {}
     name: tmpfiles
+  - name: registry-auth
+    secret:
+      secretName: quay-push-secret
   workspaces:
   - name: source
     description: Workspace containing the source code to build.
