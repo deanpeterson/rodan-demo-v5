@@ -16,6 +16,14 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     janus-idp.io/tekton: rodan-demo-v5
     quay.io/repository-slug: deanpeterson/rodan-demo-v5
+    konflux-ci.dev/overview: 'true'
+    konflux-ci.dev/konflux: 'true'
+    konflux-ci.dev/ci: 'true'
+    konflux-ci.dev/clusters: |
+      - cluster: local
+        namespace: default-tenant
+        applications:
+          - rodan-demo-v5
   tags: ["python", "pip", "flask", "sscs", "sbom", "acs"] 
 spec:
   type: service
