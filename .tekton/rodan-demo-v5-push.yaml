@@ -23,7 +23,7 @@ spec:
   - name: output-image
     value: quay-quay-quay-test.apps.salamander.aimlworkbench.com/deanpeterson/rodan-demo-v5-konflux:{{revision}}
   - name: dockerfile
-    value: Dockerfile
+    value: docker/Dockerfile
   - name: path-context
     value: .
   - name: rebuild
