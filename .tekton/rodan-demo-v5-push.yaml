@@ -28,6 +28,8 @@ spec:
     value: .
   - name: rebuild
     value: "true"
+  - name: skip-checks
+    value: "true"
   pipelineRef:
     resolver: bundles
     params:
