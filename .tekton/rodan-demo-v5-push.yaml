@@ -37,6 +37,17 @@ spec:
       value: docker-build
     - name: kind
       value: pipeline
+  taskRunSpecs:
+  - pipelineTaskName: build-container
+    stepSpecs:
+    - name: build
+      computeResources:
+        requests:
+          cpu: "1"
+          memory: 2Gi
+        limits:
+          cpu: "4"
+          memory: 4Gi
   workspaces:
   - name: workspace
     volumeClaimTemplate:
