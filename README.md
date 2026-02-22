@@ -18,3 +18,5 @@ Before you begin creating an application with this `devfile` code sample, it's h
 * For more information about Dockerfiles, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
 <!-- pipeline trigger -->
 <!-- trigger 1771446402 -->
+
+<\!-- Build trigger: Sun Feb 22 00:57:33 CST 2026 -->
